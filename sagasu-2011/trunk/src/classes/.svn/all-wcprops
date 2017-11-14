@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/svn/!svn/ver/8/trunk/src/classes
+END
+Trial.java
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/2/trunk/src/classes/Trial.java
+END
+Landmarks.java
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/2/trunk/src/classes/Landmarks.java
+END
+Account.java
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/6/trunk/src/classes/Account.java
+END
+Inventory.java
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/2/trunk/src/classes/Inventory.java
+END
+DBConnectionPool.java
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/2/trunk/src/classes/DBConnectionPool.java
+END
+UserStatus.java
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/6/trunk/src/classes/UserStatus.java
+END
+Utility.java
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/6/trunk/src/classes/Utility.java
+END
+MapPegman.java
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/8/trunk/src/classes/MapPegman.java
+END
+Abbreviations.java
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/2/trunk/src/classes/Abbreviations.java
+END
+Game.java
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/2/trunk/src/classes/Game.java
+END

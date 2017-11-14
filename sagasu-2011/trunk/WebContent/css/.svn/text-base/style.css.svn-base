@@ -1,0 +1,173 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+html, body {
+	height: 100%;	
+	background-image: url('../images/bg.png');
+}
+
+hr {
+	text-align: center;
+	width: 100%;	
+}
+
+A:link {color: #FFFFFF; text-decoration: none}
+A:visited {color: #FFFFFF; text-decoration: none}
+A:active {color: #FFFFFF; text-decoration: none}
+A:hover {color: red;}
+
+table#landing {
+	vertical-align: middle;
+	width: 100%;
+	height: 100%;
+	padding: 17%;
+	font-family: "Trade Gothic LT Std Bold Condensed No.20";
+	color: #FFFFFF;
+	font-size: 24px;
+}
+
+table#gameModes {
+	vertical-align: middle;
+	font-family: "Trade Gothic LT Std Bold Condensed No.20";
+	color: #FF0000;
+	font-size: 15px;
+	border-spacing: 0px;
+	
+}
+
+table#shop {
+	vertical-align: middle;
+	margin-left:auto;
+	margin-right:auto;
+	border-spacing: 15px;
+	border: 0px;
+	width: 80%;
+	padding: 0%;
+	font-family: "Trade Gothic LT Std Bold Condensed No.20";
+	color: #FFFFFF;
+	font-size: 18px;
+	text-align: center;	
+	
+}
+
+table#game {
+	vertical-align: middle;
+	width: 100%;
+	padding: 0%;
+	border-spacing: 15px;
+	font-family: "Trade Gothic LT Std Bold Condensed No.20";
+	color: #FFFFFF;
+	font-size: 24px;
+	text-align: center;
+}
+
+table#topnav {
+	vertical-align: middle;
+	width: 100%;
+	padding: 0%;
+	font-family: "Trade Gothic LT Std Bold Condensed No.20";
+	color: #FFFFFF;
+	font-size: 24px;
+	text-align: center;
+	
+}
+
+td#topnavtd {
+	width: 120px;
+}
+
+td#dropdown {
+	text-align: right;
+}
+
+td#map {
+	vertical-align: middle;
+	text-align: center;
+}
+
+td#left {
+	text-align: left;
+}
+
+td#lobby {
+	text-align: left;
+	vertical-align: top;
+}
+
+
+td#maincontent {
+	vertical-align: top;
+	text-align: center;
+}
+
+tr#followerTable {
+	width: 100%;
+}
+
+td#followerEntry {
+	font-size: 18px;
+	text-align: left;	
+}
+
+
+table#primary {
+	width: 100%;
+	height: 100%;
+	padding: 0%;
+	margin: 0px;
+	border-spacing: 0px;
+	font-family: "Futura Condensed Medium";
+	color: #FFFFFF;
+	font-size: 20px;	
+}
+
+.landing {
+	text-align: center;
+	vertical-align: middle;
+}
+
+
+.left_nav_container {
+	width: 300px;
+	background-image:url('../images/leftnav_bg.png');
+	vertical-align: top;
+}
+
+.left_nav_table {
+	background-image:url('../images/leftnav_top.png');
+	background-repeat:no-repeat;
+	width: 300px;
+	text-align: center;
+	}
+
+.left_nav_td {
+	width: 300px;
+	text-align: center;
+	
+}
+
+#header {
+	color: #FFF;
+	font-size: 24px;
+	font-family: "Trade Gothic LT Std Bold Condensed No.20";
+}
+
+
+#ingameText, #user_answer {
+	color: #000;
+	font-size: 18px;
+	font-family: "Trade Gothic LT Std Bold Condensed No.20";
+}
+
+
+@font-face {
+	font-family: "Trade Gothic LT Std Bold Condensed No.20";
+	src: url('../font/TradeGothicLTStd-BdCn20.ttf');
+}
+
+@font-face {
+	font-family: "Futura Condensed Medium";
+	src: url('../font/FuturaCondensedMedium.ttf');
+}

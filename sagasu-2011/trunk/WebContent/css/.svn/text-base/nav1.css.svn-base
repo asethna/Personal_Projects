@@ -1,0 +1,27 @@
+#outer {
+	border:0px solid orange;
+	margin-left:auto;
+	margin-right:auto;
+	width:80%%;
+	color: #FFF;
+	border-spacing: 10px;
+	vertical-align:center;
+	text-align:center;
+}
+
+#navi {
+	border:0px solid purple;
+	margin-left:auto;
+	margin-right:auto;
+	color: #FFF;
+	vertical-align:center;
+	text-align:center;
+}
+
+#items {
+	border:0px solid purple;
+	width:100%;
+	color: #FFF;
+	vertical-align:center;
+	text-align:center;
+}

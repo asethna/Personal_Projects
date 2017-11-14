@@ -1,0 +1,118 @@
+ul, h2 , li{
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+	color: #FFF;
+}
+
+#itemtable {
+	padding: 0px;
+	margin:0px;
+	border:0px solid black;
+	border-collapse:collapse;
+	margin-left:auto;
+	margin-right:auto;
+	width:50%;
+	color: #FFF;
+	vertical-align:center;
+	text-align:center;
+}
+
+#userInput {
+	margin: auto;
+	width: 70%;
+}
+
+#userAnswer {
+	color: #000;
+	font-family: "Trade Gothic LT Std Bold Condensed No.20";
+	
+}
+
+
+#items {
+	list-style-type: none;
+	margin-bottom: 140px;
+	padding: 0px;
+}
+
+h2 {	 
+	font-size: 1em;
+	padding-right: 50px;
+	padding-left: 50px;
+	color: #fff;
+}
+
+#itmImg {
+	border: 0px;
+	background:#000;
+	filter:alpha(opacity=50);
+	-moz-opacity:0.5;
+	-khtml-opacity: 0.5;
+	opacity: 0.5;
+}
+
+#nav > li {
+	border: 0px;
+
+    position: relative;
+    display: inline-block;
+    
+    /* for IE6/7 */
+    *display: inline;
+    zoom:1; 
+}
+
+#nav a {
+    padding: 0px 0px;
+	padding-top: 45px;
+	color: #000;
+	text-decoration: none;
+}
+
+#nav a:hover, #nav a:focus {
+	border: 0px;
+	background: #eee;
+}
+
+.submenu {
+    position: absolute;
+    left: -2px;
+    z-index: 0;
+    opacity: 0;
+    filter:alpha(opacity=0);
+		white-space: nowrap;
+		background-image:url('../images/bg.png');
+	-webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -moz-border-radius: 0 0 5px 5px; 
+    -webkit-border-radius: 0 0 5px 5px; 
+    border-radius: 0 0 5px 5px;         
+	
+	/*for Chrome */
+    -webkit-border-bottom-left-radius: 5px; 
+    -webkit-border-bottom-right-radius: 5px;
+	
+    border: 2px solid #eee;
+    border-top: 1px solid #ccc;
+}
+
+.submenu li {
+	height: 0;
+    line-height: 25px;
+    background-image:url('../images/bg.png');
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+#nav > li:hover .submenu, #nav > li.focus .submenu {
+	z-index: 10;
+    opacity: 1;
+    filter:alpha(opacity=100);
+}
+
+#nav > li:hover .submenu li, #nav > li.focus .submenu li {
+    height: 25px;
+}
