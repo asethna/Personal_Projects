@@ -63,13 +63,10 @@
       // label2
       // 
       this.label2.AutoSize = true;
-      this.label2.BackColor = System.Drawing.Color.Yellow;
-      this.label2.ForeColor = System.Drawing.Color.Green;
       this.label2.Location = new System.Drawing.Point(274, 45);
       this.label2.Name = "label2";
       this.label2.Size = new System.Drawing.Size(186, 13);
       this.label2.TabIndex = 3;
-      this.label2.Text = "Generated Excel in Documents Folder";
       this.label2.Visible = false;
       // 
       // Form1
@@ -94,7 +91,6 @@
     private System.Windows.Forms.Label label1;
     private System.Windows.Forms.Button button1;
     private System.Windows.Forms.Label label2;
-
   }
 }
 

@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Text;
 using System.IO;
+using System.Threading;
 using Microsoft.Office.Interop.Excel;
 using System.Xml;
 
@@ -25,57 +21,79 @@ namespace demo
 
     public void GenerateReport(String input, System.Windows.Forms.Label label)
     {
-      String excelOut = Directory.GetCurrentDirectory() + "\\out.xlsx";
-      //start to create the excel sheet.
-      if (File.Exists(excelOut))
-        File.Delete(excelOut);
 
-      System.Diagnostics.Process process = null;
-      if (process == null)
+      try
       {
-        process = new System.Diagnostics.Process();
-        webProcess(input, ref process);
-        string outputFile = Directory.GetCurrentDirectory() + "\\data.xml";
+        String excelOut = Directory.GetCurrentDirectory() + "\\out.xlsx";
+        //start to create the excel sheet.
+        if (File.Exists(excelOut))
+          File.Delete(excelOut);
 
-        if (process.HasExited)
+        System.Diagnostics.Process process = null;
+        if (process == null)
         {
-          if (!File.Exists(outputFile))
-            throw new ApplicationException("Was not able to generate data.xml from webpage given");
-
-          ExcelActions xla = new ExcelActions();
-          xla.GetWorkbook(excelOut);
-          xla.QuickSave(excelOut);
-          _Worksheet ws = xla.SetWorksheetName(excelOut, "sample");
-          xla.WriteToXL(ws, 1, 1, "Name");
-          xla.WriteToXL(ws, 1, 2, "Review");
-          xla.WriteToXL(ws, 1, 3, "Price");
-
-          XmlDocument data = new XmlDocument();
-          data.Load(outputFile);
-
-          XmlNode node = data.DocumentElement.SelectSingleNode("/root");
-          int row = 1;
-          foreach (XmlNode type in node.ChildNodes)
+          process = new System.Diagnostics.Process();
+          webProcess(input, ref process);
+          string outputFile = Directory.GetCurrentDirectory() + "\\data.xml";
+          int count = 1;
+          while (true)
           {
-            row++;
-            int col = 1;
-            foreach (XmlNode item in type.ChildNodes)
+            Thread.Sleep(5000);
+            count++;
+            if (count == 5)
             {
-              xla.WriteToXL(ws, row, col, item.InnerText);
-              col++;
-              xla.QuickSave(excelOut);
+              error(label);
+              break;
             }
-            xla.QuickSave(excelOut);
+            if (process.HasExited)
+            {
+              if (!File.Exists(outputFile))
+                error(label);
+
+              ExcelActions xla = new ExcelActions();
+              xla.GetWorkbook(excelOut);
+              xla.QuickSave(excelOut);
+              _Worksheet ws = xla.SetWorksheetName(excelOut, "sample");
+              xla.WriteToXL(ws, 1, 1, "Name");
+              xla.WriteToXL(ws, 1, 2, "Review");
+              xla.WriteToXL(ws, 1, 3, "Price");
+
+              XmlDocument data = new XmlDocument();
+              data.Load(outputFile);
+
+              XmlNode node = data.DocumentElement.SelectSingleNode("/root");
+              int row = 1;
+              foreach (XmlNode type in node.ChildNodes)
+              {
+                row++;
+                int col = 1;
+                foreach (XmlNode item in type.ChildNodes)
+                {
+                  xla.WriteToXL(ws, row, col, item.InnerText);
+                  col++;
+                  xla.QuickSave(excelOut);
+                }
+                xla.QuickSave(excelOut);
+              }
+              dynamic allDataRange = ws.UsedRange;
+              allDataRange.WrapText = false;
+              allDataRange.Columns.AutoFit();
+              allDataRange.Sort(Key1: allDataRange.Columns[1], Order1: XlSortOrder.xlAscending, Header: XlYesNoGuess.xlYes);
+              ws.ListObjects.AddEx(XlListObjectSourceType.xlSrcRange, Type.Missing, Type.Missing, XlYesNoGuess.xlYes, Type.Missing, Type.Missing);
+              xla.SaveWorkbook(excelOut);
+              xla.CloseXL();
+              label.Visible = true;
+              label.BackColor = System.Drawing.Color.Yellow;
+              label.ForeColor = System.Drawing.Color.Green;
+              label.Text = "Generated Excel in Documents Folder";
+            }
+            break;
           }
-          dynamic allDataRange = ws.UsedRange;
-          allDataRange.WrapText = false;
-          allDataRange.Columns.AutoFit();
-          allDataRange.Sort(Key1: allDataRange.Columns[1], Order1: XlSortOrder.xlAscending, Header: XlYesNoGuess.xlYes);
-          ws.ListObjects.AddEx(XlListObjectSourceType.xlSrcRange, Type.Missing, Type.Missing, XlYesNoGuess.xlYes, Type.Missing, Type.Missing);
-          xla.SaveWorkbook(excelOut);
-          xla.CloseXL();
-          label.Visible = true;
         }
+      }
+      catch
+      {
+        error(label);
       }
     }
 
@@ -86,6 +104,14 @@ namespace demo
       startInfo.Arguments = "\"" + input + "\"";
       process.StartInfo = startInfo;
       process.Start();
+    }
+
+    public void error(System.Windows.Forms.Label label)
+    {
+      label.Visible = true;
+      label.BackColor = System.Drawing.Color.Yellow;
+      label.ForeColor = System.Drawing.Color.Red;
+      label.Text = "Unable to Generate Excel";
     }
   }
 }
