@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data.SqlClient;
-using System.Security;
 
 namespace demo
 {
@@ -42,8 +37,9 @@ namespace demo
         cmd.ExecuteNonQuery();
         transaction.Commit();
       }
-      catch
+      catch (Exception e)
       {
+        Console.WriteLine(e);
         transaction.Rollback();
 
       }
@@ -61,19 +57,32 @@ namespace demo
         cmd.ExecuteNonQuery();
         transaction.Commit();
       }
-      catch
+      catch (Exception e)
       {
+        Console.WriteLine(e);
         transaction.Rollback();
       }
     }
-    public String SelectTable(SqlConnection conn, String tableName, String columns)
+    public String SelectTableAll(SqlConnection conn, String tableName)
     {
-      SqlCommand cmd = new SqlCommand("SELECT " + columns + " FROM " + tableName, conn);
+      SqlCommand cmd = new SqlCommand("SELECT * FROM " + tableName, conn);
       String val = "";
       SqlDataReader read = cmd.ExecuteReader();
       while (read.Read())
       {
-        val += read["name"].ToString() + "|" + read["price"].ToString() + "|" + read["review"].ToString() + "\n";
+        val += read["name"].ToString() + "|" + read["price"].ToString() + "|" + read["review"].ToString() + "|" + read["type"].ToString() + "\n";
+      }
+      read.Close();
+      return val;
+    }
+    public String ConditionalSelectAllTable(SqlConnection conn, String tableName, String condition)
+    {
+      SqlCommand cmd = new SqlCommand("SELECT * FROM " + tableName + " WHERE " + condition, conn);
+      String val = "";
+      SqlDataReader read = cmd.ExecuteReader();
+      while (read.Read())
+      {
+        val += read["name"].ToString() + "|" + read["price"].ToString() + "|" + read["review"].ToString() + "|" + read["type"].ToString() + "\n";
       }
       read.Close();
       return val;
@@ -91,8 +100,9 @@ namespace demo
         cmd.ExecuteNonQuery();
         transaction.Commit();
       }
-      catch
+      catch (Exception e)
       {
+        Console.WriteLine(e);
         transaction.Rollback();
       }
     }

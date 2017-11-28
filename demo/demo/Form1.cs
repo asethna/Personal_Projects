@@ -1,14 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Linq;
 
 namespace demo
 {
@@ -21,7 +14,6 @@ namespace demo
     {
       //Add items to the dictionary
       mapsWeb.Add("", null);
-
       InitializeComponent(mapsWeb.Keys.ToList());
     }
 
