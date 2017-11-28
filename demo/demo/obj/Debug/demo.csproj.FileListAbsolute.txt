@@ -14,12 +14,12 @@ C:\Users\asethna\Documents\GitHub\demo\demo\obj\Debug\demo.Properties.Resources.
 C:\Users\asethna\Documents\GitHub\demo\demo\obj\Debug\demo.csproj.GenerateResource.Cache
 C:\Users\asethna\Documents\GitHub\demo\demo\obj\Debug\demo.exe
 C:\Users\asethna\Documents\GitHub\demo\demo\obj\Debug\demo.pdb
-C:\Users\Sethna Family\Documents\asethna\Personal_Projects\demo\demo\bin\Debug\demo.exe.config
-C:\Users\Sethna Family\Documents\asethna\Personal_Projects\demo\demo\bin\Debug\demo.exe
-C:\Users\Sethna Family\Documents\asethna\Personal_Projects\demo\demo\bin\Debug\demo.pdb
 C:\Users\Sethna Family\Documents\asethna\Personal_Projects\demo\demo\obj\Debug\demo.Form1.resources
 C:\Users\Sethna Family\Documents\asethna\Personal_Projects\demo\demo\obj\Debug\demo.Properties.Resources.resources
 C:\Users\Sethna Family\Documents\asethna\Personal_Projects\demo\demo\obj\Debug\demo.csproj.GenerateResource.Cache
 C:\Users\Sethna Family\Documents\asethna\Personal_Projects\demo\demo\obj\Debug\demo.csproj.CoreCompileInputs.cache
+C:\Users\Sethna Family\Documents\asethna\Personal_Projects\demo\demo\bin\Debug\demo.exe.config
+C:\Users\Sethna Family\Documents\asethna\Personal_Projects\demo\demo\bin\Debug\demo.exe
+C:\Users\Sethna Family\Documents\asethna\Personal_Projects\demo\demo\bin\Debug\demo.pdb
 C:\Users\Sethna Family\Documents\asethna\Personal_Projects\demo\demo\obj\Debug\demo.exe
 C:\Users\Sethna Family\Documents\asethna\Personal_Projects\demo\demo\obj\Debug\demo.pdb

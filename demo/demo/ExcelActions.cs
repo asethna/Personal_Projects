@@ -211,5 +211,24 @@ namespace demo
       Console.WriteLine("Worksheet " + name + " not found Workbook " + workbookPath);
       return null;
     }
+
+    /// <summary>
+    /// Get the value of the cell at the given row/column. If no value found, returns null
+    /// </summary>
+    /// <param name="worksheet">String name of the worksheet</param>
+    /// <param name="row">Integer value of the row</param>
+    /// <param name="col">Integer value of the column</param>
+    /// <returns>String value of the cell at the given row/column otherwise null</returns>
+    public String GetCellValue(_Worksheet worksheet, int row, int col)
+    {
+      try
+      {
+        return worksheet.Cells[row, col].Value.ToString();
+      }
+      catch
+      {
+        return null;
+      }
+    }
   }
 }
